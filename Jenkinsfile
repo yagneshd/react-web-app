@@ -17,10 +17,11 @@
                              sh '''
 							 node --version
 							 npm --version
-							 ls -ltr
+							 
 							 npm install
 							 npm run build
-							 cd build
+							 ls -ltr
+							 cd build/
 							 tar -cvf "frontend-${BUILD_NUMBER}.tar *
 							    '''
 							 
