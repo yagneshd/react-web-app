@@ -36,7 +36,7 @@
                              sh '''
 								ls -ltr
 								cd build
-								tar -xvf "frontend-${BUILD_NUMBER}.tar
+								tar -xvf frontend-${BUILD_NUMBER}.tar
 								ls -ltr		
 							    '''
 							 
