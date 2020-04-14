@@ -43,7 +43,7 @@
 								ls -ltr
 								'''
 								
-						googleStorageUpload bucket: "gs://artifactory-server", pattern: '*.tar'	
+						googleStorageUpload bucket: "gs://artifactory-server", credentialsId: "storage-id", pattern: '*.tar'	
 							   }	
 							 
                             }
