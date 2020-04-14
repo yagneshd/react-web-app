@@ -39,16 +39,19 @@
                              sh '''
 								cd build
 								tar -xvf frontend-${BUILD_NUMBER}.tar
-								#rm -rf frontend-${BUILD_NUMBER}.tar
+								rm -rf frontend-${BUILD_NUMBER}.tar
 								ls -ltr
 								'''
-								
-						googleStorageUpload bucket: "gs://artifactory-server", credentialsId: "bitwise-gcp-project", pattern: '*.tar'	
-							   }	
+								dir("${WORKSPACE}/build")
+								{	
+									googleStorageUpload bucket: "gs://artifactory-server", credentialsId: "bitwise-gcp-project", pattern: '*'	
+								}	
 							 
-                            }
-                          }
+							 }
+                           }
 						  
 						  
                         }
                    }
+				 }  
+              
