@@ -32,13 +32,19 @@
                           {
                            steps 
                             {
+							
+							 script
+							  {	
                              							 
                              sh '''
-								ls -ltr
 								cd build
 								tar -xvf frontend-${BUILD_NUMBER}.tar
-								ls -ltr		
-							    '''
+								#rm -rf frontend-${BUILD_NUMBER}.tar
+								ls -ltr
+								'''
+								
+						googleStorageUpload bucket: "gs://artifactory-server", pattern: '*.tar'	
+							   }	
 							 
                             }
                           }
