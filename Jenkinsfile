@@ -41,12 +41,9 @@
 								tar -xvf frontend-${BUILD_NUMBER}.tar
 								rm -rf frontend-${BUILD_NUMBER}.tar
 								ls -ltr
+								gsutil cp * gs://artifactory-server/
 								'''
-								dir("${WORKSPACE}/build")
-								{	
-									googleStorageUpload bucket: "gs://artifactory-server", credentialsId: "bitwise-gcp-project", pattern: '*'	
-								}	
-							 
+								
 							 }
                            }
 						  
